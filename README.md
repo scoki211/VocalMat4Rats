@@ -23,7 +23,7 @@
 
 <br />
 
-If you use VocalMat or any part of it in your own work, please cite [Fonseca et al](https://www.biorxiv.org/content/10.1101/2020.05.20.105023v2):
+If you use VocalMat4Rats or any part of it in your own work, please cite [Fonseca et al](https://www.biorxiv.org/content/10.1101/2020.05.20.105023v2):
 ```
 @article{Fonseca2021AnalysisOU,
   title={Analysis of ultrasonic vocalizations from mice using computer vision and machine learning},
@@ -33,10 +33,12 @@ If you use VocalMat or any part of it in your own work, please cite [Fonseca et 
   volume={10}
 }
 ```
+And please also cite [Scott et al. 2023](https://arxiv.org/abs/2303.03183)
 
-For more information, visit our website: [VocalMat - Dietrich Lab](http://dietrich-lab.org/vocalmat)
+For more information, visit the VocalMat team's website: [VocalMat - Dietrich Lab](http://dietrich-lab.org/vocalmat)
 
-Dataset and audios used in the paper are available at: [OSF Repository](https://osf.io/bk2uj/)
+Dataset and audios used in the original VocalMat paper are available at: [OSF Repository](https://osf.io/bk2uj/)\
+Dataset for VocalMat4Rats will be available upon publication.
 
 ## Table of Contents
 - [Description](#description)
@@ -58,16 +60,16 @@ Dataset and audios used in the paper are available at: [OSF Repository](https://
 
 <p align="justify"> VocalMat <b>Identifier</b> detects vocalization candidates in the audio file. Vocalization candidates are detected through a series of image processing operations and differential geometry analysis over spectrogram information. The VocalMat Identifier outputs (optional) a MATLAB formatted file (.MAT) with information about the spectral content of detected vocalizations (e.g., frequency, intensity, timestamp), that is later used by the VocalMat Classifier.
 
-<p align="justify"> VocalMat <b>Classifier</b> uses a Convolutional Neural Network (CNN) to classify each vocalization candidate into 12 distinct labels: short, flat, chevron, reverse chevron, downward frequency modulation, upward frequency modulation, complex, multi steps, two steps, step down, step up, and noise.
+<p align="justify"> VocalMat <b>Classifier</b> uses a Convolutional Neural Network (CNN) to classify each short vocalization candidate into 12 distinct labels: Complex, Complex trill, Downward ramp, Flat, Inverted-U, Short, Split, Step down, Step up, Trill, Upward ramp, and noise.
 
 ![VocalMat labels](resources/labels.png)
 
 ## Features
-- __11 Classification Classes:__ VocalMat is able to distinguish between 11 classes of vocalizations (see Figure above), according to adapted definitions from [Grimsley et al, 2011](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017460).
+- __11 Classification Classes:__ VocalMat is able to distinguish between 11 classes of vocalizations (see Figure above), according to adapted definitions from [Wright et al. 2010](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017460).
 - __Noise Detection:__ eliminates vocalization candidates associated to mechanical or segmentation noise.
 - __Harmonic Detection:__ detects vocalizations with components overlapping in time.
-- __Manifold Visualization and Alignment:__ visualize the vocal reportoire using Diffusion Maps and align manifolds to compare different animals.
 - __Fast Performance:__ optimized versions for personal computers and high-performance computing (clusters)
+-__Note:__ Clustering and difusion maps are currently disabled for this version of VocalMat4Rats
 
 ## Getting Started
 ![Recordit GIF](resources/clone.gif)
@@ -78,12 +80,12 @@ Dataset and audios used in the paper are available at: [OSF Repository](https://
 
 #### Latest Stable Version
 ```bash
-$ git clone https://github.com/ahof1704/VocalMat.git
+$ git clone https://github.com/scoki211/VocalMat4Rats.git
 ```
 
 #### Latest (Unreleased) Version
 ```bash
-$ git clone -b VocalMat_RC --single-branch https://github.com/ahof1704/VocalMat.git
+$ git clone -b VocalMat_RC --single-branch https://github.com/scoki211/VocalMat4Rats.git
 ```
 
 ##### Using a Git client
@@ -92,17 +94,13 @@ You can use a Git client to clone our repository, we recommend GitHub's own clie
 ```Download at:``` [https://desktop.github.com](https://desktop.github.com)
 
 ##### Manual download
-You can download VocalMat by using GitHub's `Download Zip` option. However, since we use Git LFS (Git Large File Storage), two necessary files will not be downloaded automatically. Follow these instructions if downloading manually:
+You can download VocalMat by using GitHub's `Download Zip` option. However, since we use Git LFS (Git Large File Storage), a necessary file will not be downloaded
 
-> Download this repository as a zip file: [Download Zip](https://github.com/ahof1704/VocalMat/archive/master.zip)
+> Download this repository as a zip file: [Download Zip](https://github.com/scoki211/VocalMat4Rats/archive/master.zip)
 
 Extract the `.zip` file. This is the VocalMat directory.
 
-> Download the example audio file: [Download Audio](https://osf.io/zvrk6/download)
-
-Place the audio file in the `audios` folder inside the VocalMat directory.
-
-> Download the neural network model file: [Download Model](https://osf.io/3yc79/download)
+> Download the neural network model file: [Download Model](https://osf.io/s4g2j)
 
 Place the model file in the `vocalmat_classifier` folder inside the VocalMat directory.
 
