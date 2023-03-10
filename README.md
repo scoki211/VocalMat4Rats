@@ -65,7 +65,7 @@ Dataset for VocalMat4Rats will be available upon publication.
 ![VocalMat labels](resources/schema_fixed_greyscale.png)
 
 ## Features
-- __11 Classification Classes:__ VocalMat is able to distinguish between 11 classes of vocalizations (see Figure above), according to adapted definitions from [Wright et al. 2010](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017460).
+- __11 Classification Classes:__ VocalMat is able to distinguish between 11 classes of vocalizations (see Figure above), according to adapted definitions from [Wright et al. 2010](https://link.springer.com/article/10.1007/s00213-010-1859-y).
 - __Noise Detection:__ eliminates vocalization candidates associated to mechanical or segmentation noise.
 - __Harmonic Detection:__ detects vocalizations with components overlapping in time.
 - __Fast Performance:__ optimized versions for personal computers and high-performance computing (clusters)
