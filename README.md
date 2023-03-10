@@ -24,7 +24,7 @@
 <br />
 
 If you use VocalMat4Rats or any part of it in your own work, please cite: 
-[Scott et al. 2023](https://arxiv.org/abs/2303.03183)
+[Scott et al. 2023](https://arxiv.org/abs/2303.03183), and 
 [Fonseca et al](https://www.biorxiv.org/content/10.1101/2020.05.20.105023v2):
 ```
 @article{Fonseca2021AnalysisOU,
