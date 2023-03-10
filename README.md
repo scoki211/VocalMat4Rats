@@ -23,7 +23,9 @@
 
 <br />
 
-If you use VocalMat4Rats or any part of it in your own work, please cite [Fonseca et al](https://www.biorxiv.org/content/10.1101/2020.05.20.105023v2):
+If you use VocalMat4Rats or any part of it in your own work, please cite: 
+[Scott et al. 2023](https://arxiv.org/abs/2303.03183)
+[Fonseca et al](https://www.biorxiv.org/content/10.1101/2020.05.20.105023v2):
 ```
 @article{Fonseca2021AnalysisOU,
   title={Analysis of ultrasonic vocalizations from mice using computer vision and machine learning},
@@ -33,8 +35,6 @@ If you use VocalMat4Rats or any part of it in your own work, please cite [Fonsec
   volume={10}
 }
 ```
-And please also cite [Scott et al. 2023](https://arxiv.org/abs/2303.03183)
-
 For more information, visit the VocalMat team's website: [VocalMat - Dietrich Lab](http://dietrich-lab.org/vocalmat)
 
 Dataset and audios used in the original VocalMat paper are available at: [OSF Repository](https://osf.io/bk2uj/)\
@@ -52,7 +52,7 @@ Dataset for VocalMat4Rats will be available upon publication.
 ---
 
 ## Description
-> **VocalMat is an automated tool that identifies and classifies mice vocalizations.**
+> **VocalMat4Rats is an automated tool that identifies and classifies 50-kHz range rat vocalizations.**
 
 <p align="justify"> VocalMat is divided into two main components. The VocalMat Identifier, and the VocalMat Classifier.
 
@@ -62,7 +62,7 @@ Dataset for VocalMat4Rats will be available upon publication.
 
 <p align="justify"> VocalMat <b>Classifier</b> uses a Convolutional Neural Network (CNN) to classify each short vocalization candidate into 12 distinct labels: Complex, Complex trill, Downward ramp, Flat, Inverted-U, Short, Split, Step down, Step up, Trill, Upward ramp, and noise.
 
-![VocalMat labels](resources/labels.png)
+![VocalMat labels](resources/schema_fixed_greyscale.png)
 
 ## Features
 - __11 Classification Classes:__ VocalMat is able to distinguish between 11 classes of vocalizations (see Figure above), according to adapted definitions from [Wright et al. 2010](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0017460).
