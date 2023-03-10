@@ -69,7 +69,7 @@ Dataset for VocalMat4Rats will be available upon publication.
 - __Noise Detection:__ eliminates vocalization candidates associated to mechanical or segmentation noise.
 - __Harmonic Detection:__ detects vocalizations with components overlapping in time.
 - __Fast Performance:__ optimized versions for personal computers and high-performance computing (clusters)
--__Note:__ Clustering and difusion maps are currently disabled for this version of VocalMat4Rats
+- __Note:__ Clustering and difusion maps are currently disabled for this version of VocalMat4Rats
 
 ## Getting Started
 ![Recordit GIF](resources/clone.gif)
