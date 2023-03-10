@@ -71,10 +71,10 @@ Dataset for VocalMat4Rats will be available upon publication.
 - __Fast Performance:__ optimized versions for personal computers and high-performance computing (clusters)
 
 ## What's different in VM4Rats
-- __ Increased time of absent signal for VM to determine the following signal to be a new USV, to account for species differences in vocalizations
-- __ Set a minimum frequency threshold (line 141) in VM identifier routine at 30kHz to exclude 22-kHz aversives, this can be modified at your leisure
-- __ Uses our classification scheme for rat USVs, if you wish to train a new model using our classification scheme, see the training routine train_model_Rat
-- __Note:__ Clustering and difusion maps are currently disabled for this version of VocalMat4Rats as these were throwing errors.
+- __ Signal detection changes:__ Increased time of absent signal for VM to determine the following signal to be a new USV, to account for species differences in vocalizations.
+- __ Minimum frequency threshold:__ At line 141 in VM identifier routine, we've set a minimum threshold at 30kHz to exclude 22-kHz aversives, this can be modified at your leisure
+- __Wright et al. 2010 style classifiers:__ VM4Rats Uses our classification scheme for rat USVs, if you wish to train a new model using our classification scheme, see the training routine train_model_Rat
+- __Note:__ Clustering and diffusion maps are currently disabled for this version of VocalMat4Rats as these were throwing errors.
 
 ## Getting Started
 ![Recordit GIF](resources/clone.gif)
