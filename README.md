@@ -69,7 +69,12 @@ Dataset for VocalMat4Rats will be available upon publication.
 - __Noise Detection:__ eliminates vocalization candidates associated to mechanical or segmentation noise.
 - __Harmonic Detection:__ detects vocalizations with components overlapping in time.
 - __Fast Performance:__ optimized versions for personal computers and high-performance computing (clusters)
-- __Note:__ Clustering and difusion maps are currently disabled for this version of VocalMat4Rats
+
+## What's different in VM4Rats
+- __ Increased time of absent signal for VM to determine the following signal to be a new USV, to account for species differences in vocalizations
+- __ Set a minimum frequency threshold (line 141) in VM identifier routine at 30kHz to exclude 22-kHz aversives, this can be modified at your leisure
+- __ Uses our classification scheme for rat USVs, if you wish to train a new model using our classification scheme, see the training routine train_model_Rat
+- __Note:__ Clustering and difusion maps are currently disabled for this version of VocalMat4Rats as these were throwing errors.
 
 ## Getting Started
 ![Recordit GIF](resources/clone.gif)
