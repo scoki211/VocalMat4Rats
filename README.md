@@ -24,7 +24,7 @@
 <br />
 
 If you use VocalMat4Rats or any part of it in your own work, please cite: 
-[Scott et al. 2023](https://arxiv.org/abs/2303.03183), and 
+[Scott et al. 2024](https://doi.org/10.1121/10.0024340), and 
 [Fonseca et al](https://www.biorxiv.org/content/10.1101/2020.05.20.105023v2):
 ```
 @article{Fonseca2021AnalysisOU,
@@ -72,9 +72,12 @@ Dataset for VocalMat4Rats will be available upon publication.
 
 ## What's different in VM4Rats
 - __Signal detection changes:__ Increased time of absent signal for VM to determine the following signal to be a new USV, to account for species differences in vocalizations.
-- __Minimum frequency threshold:__ At line 141 in VM identifier routine, we've set a minimum threshold at 30kHz to exclude 22-kHz aversives, this can be modified at your leisure
+- __Minimum frequency threshold:__ At ~line 140 in VM identifier routine, we've set a minimum threshold at 30kHz to exclude 22-kHz aversives, this can be modified at your leisure
 - __Wright et al. 2010 style classifiers:__ VM4Rats Uses our classification scheme for rat USVs, if you wish to train a new model using our classification scheme, see the training routine train_model_Rat
 - __Note:__ Clustering and diffusion maps are currently disabled for this version of VocalMat4Rats as these were throwing errors.
+
+## Coming soon
+-__Synthetic image creator:__ We will release a small tool (matlab routine) used to create synthetic USV images for training based off an existing image (created through vocalMat).
 
 ## Getting Started
 ![Recordit GIF](resources/clone.gif)
@@ -124,6 +127,12 @@ Place the model file in the `vocalmat_classifier` folder inside the VocalMat dir
 #### `VocalMat` Output Files
 
 <p align="justify">VocalMat outputs a directory with the same name as the audio file that was analyzed. Inside that directory there will be two directories (<i>All</i>, and <i>All_axes</i> if <i>save_plot_spectrograms=1</i>), and two Microsoft Excel (.xlsx) files. Inside <i>All_axes</i> you will find one image for each vocalization candidate detetcted with the resulting segmentation illusrated by blue circles. The raw original images are available inside <i>All</i>. The main Excel file has the same name of the audio file analyzed (<i>audio_file_name</i>.xlsx). This file contains information on each vocalization, such as start and end time, duration, frequency (minimum, mean and maximum), bandwidth, intensity (minimum, mean, maximum and corrected based on the backgroun), existence of harmonic components or distortions (noisy), and call type. The second excel file named as <i>audio_file_name</i>_DL.xlsx shows the probability distribution for each vocalization candidate for the different vocal classes.
+
+#### Training your own network
+While these data that were reported in [Scott et al. 2024](https://doi.org/10.1121/10.0024340) were suitable for our needs under low noise conditions, it should be noted that differences in recording conditions, microphone gain and recording paradigm may lead to different levels of performance. Thus, training of your own network (utilizing images created through VocalMat audio processing) may be a desirable option. You can access the training routine through VocalMat4Rats-master > vocalmat_classifier > training > train_model_Rat. You will see at line 21 you will need to specify the folder where your images are located. From line 75 you will need to specify your desired classification schema, if you wish to change it from the present one. The folder where your images are located should have a subfolder for each classification category specified, within which is contained your training images. If adjusting classification schema, you will also need to adjust the routine vocalmat_classifier.m before it will run successfully, to do so you will need to adjust classifiers from line 52 and again from line 348. 
+
+#### Adjusting frequency cut-off
+We have included a frequency cut-off at 30-kHz as standard, but you may wish to modify this to suite your needs, to do so open vocalmat_identfier, under the vocalmat_identifier subfolder of the master, navigate to ~line 140. Replace F>30000 with whatever you find suitable, for instance if you want VocalMat to ignore detections below 25kHz you would write F>25000 
 
 <!-- #### Personal Use (bash script, linux-based systems)
 ```bash
@@ -177,7 +186,7 @@ $ ./run_identifier_cluster --email your@email.com --cores 4 --mem 128 --time 600
 
 ## FAQ
 - Will `VocalMat` work with my MATLAB version?
-<p align="justify">VocalMat was developed and tested using MATLAB 2017a through 2019b versions. We cannot guarantee that it will work in other versions of MATLAB. If your MATLAB version supports all the required Add-Ons, VocalMat should work.
+<p align="justify">VocalMat was developed and tested using MATLAB 2017a through 2019b versions. We cannot guarantee that it will work in other versions of MATLAB. If your MATLAB version supports all the required Add-Ons, VocalMat should work. It should be noted that VM4Rats was adapted and trained using MATLAB 2020b - 2021b on Windows 10.
 
 - What are the hardware requirements to run `VocalMat`?
 <p align="justify">The duration of the audio files that can be processed in VocalMat is limited to the amount of RAM your computer has. We estimate around 1GB of RAM for every minute of recording using one minute segments. For a 10 minute recording, your computer should have at least 10GB of RAM available. RAM usage will vary depending on your MATLAB version and computer, these numbers are just estimates.
