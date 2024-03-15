@@ -75,9 +75,9 @@ Dataset for VocalMat4Rats will be available upon publication.
 - __Minimum frequency threshold:__ At ~line 140 in VM identifier routine, we've set a minimum threshold at 30kHz to exclude 22-kHz aversives, this can be modified at your leisure
 - __Wright et al. 2010 style classifiers:__ VM4Rats Uses our classification scheme for rat USVs, if you wish to train a new model using our classification scheme, see the training routine train_model_Rat
 - __Note:__ Clustering and diffusion maps are currently disabled for this version of VocalMat4Rats as these were throwing errors.
+- __Synthetic training data creation routine:__ Create your own synthetic training data images with our USV_morpher.m routine, which takes as input images created through VocalMat. Note that you need to check these images for likeness before including them in your training set.
 
 ## Coming soon
--__Synthetic image creator:__ We will release a small tool (matlab routine) used to create synthetic USV images for training based off an existing image (created through vocalMat).
 
 ## Getting Started
 ![Recordit GIF](resources/clone.gif)
